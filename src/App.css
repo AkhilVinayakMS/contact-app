@@ -1,0 +1,131 @@
+:root{
+  --inputbox-background:#3a3d52;
+  --box-height:40px;
+  --input-box-width:250px;
+  --button-holder-width:50px
+}
+.App {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.blur-bg{
+  opacity: .5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-image: linear-gradient(to bottom, #000, #4e536f);
+  min-height: 100vh;
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 6vw;
+}
+
+.App-link {
+  color: #61dafb;
+}
+input[type=text] {
+  border: none;
+  border: 0px;
+  outline: none;
+}
+.search-icon{
+  height: 40px;
+  width: 40px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#search-text-input{
+  float:left;
+  height:var(--box-height);
+  outline:0;
+  padding-left: 10px;
+  width:var(--input-box-width); 
+  background-color: var(--inputbox-background);
+  color: white;
+}
+ 
+#button-holder{
+  background-color: var(--inputbox-background);
+  cursor:pointer;
+  float:left;
+  height:42px;
+  /* text-align:center; */
+  width:var(--button-holder-width);
+}
+ 
+#button-holder img{
+  margin:13px;
+  width:20px; 
+}
+#contact-box{
+  float:left;
+  height:var(--box-height);
+  outline:0;
+  padding-left: 10px;
+  padding-top: 10px;
+  width:calc(var(--input-box-width) + var(--button-holder-width));; 
+  background-color: var(--inputbox-background);
+  color: white;
+}
+#filter-button{
+  /* float: right; */
+  display:inline-block;
+  position:relative;
+  width:calc(var(--input-box-width) + var(--button-holder-width));
+  justify-content: right;
+  align-items: right;
+  align-content: right;
+  text-align: right;
+}
+input[type=button] {
+  all:unset;
+  color: white;
+  cursor:pointer;
+}
+
+.popup {
+  position:fixed;
+  background: white;
+  opacity: 1;
+  z-index: 100;
+  min-height: 80vh;
+  min-width: 75%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  color: black;
+}
+#fav-icon{
+  display: inline-block;
+  padding: 10px;
+}
+#close-icon{
+  margin-top: 20px;
+  margin-left: 4vw;
+}
+.email-display {
+  margin-left: 3vw;
+}
