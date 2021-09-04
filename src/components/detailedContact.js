@@ -18,11 +18,11 @@ function DetailedContact(props) {
                     <Grid item xs={8} md={6}>
                         <div>
                         <b>{props.data.name}</b>
-                        <div id='fav-icon'><img src={fav?starFillIcon:starBorderIcon} onClick={handleFav}></img></div>
+                        <div id='fav-icon'><img alt=''src={fav?starFillIcon:starBorderIcon} onClick={handleFav}></img></div>
                     </div>
                     </Grid>
                     <Grid item md={1} xs={1} >
-                        <img id = 'close-icon'src={closeIcon} onClick={()=>props.handleClose('',false)}></img>
+                        <img alt='' id = 'close-icon'src={closeIcon} onClick={()=>props.handleClose('',false)}></img>
                     </Grid>
                 </Grid>
                 <br/>

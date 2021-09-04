@@ -29,7 +29,7 @@ function App() {
     setSelectedContact(data)
   }
   function handleFavAdding(item){
-    const indexf=(i)=>i.id==item.id;
+    const indexf=(i)=>i.id===item.id;
     const index = data.findIndex(indexf)
     item.isFav = !item.isFav;
     data[index]=item;
@@ -53,7 +53,7 @@ function App() {
               <Grid item xs={12} md={5}>
                 <ContactBoxComponent item={item} onClickComp={handleMouseClick} />
               </Grid>
-              <Grid item xs={0} md={3} />
+              <Grid item  md={3} />
             </Fragment>
           )
         })}
@@ -71,24 +71,24 @@ function App() {
           <Grid item xs={12} md={5}>
             <h3>Contacts</h3>
           </Grid>
-          <Grid item xs={0} md={3} />
+          <Grid item  md={3} />
         </Grid>
 
         <Grid container>
-          <Grid item xs={0} md={4} />
+          <Grid item  md={4} />
           <Grid item xs={12} md={4}>
             <SearchBoxComponent onInputValue={handleSearchText} />
 
           </Grid>
 
-          <Grid item xs={0} md={4} />
+          <Grid item  md={4} />
         </Grid>
         <br />
 
         <Grid container>
           <Grid item md={5} />
           <Grid item xs={12} md={3} id='filter-button'> <input type='button' value={!fav ? 'Filter Favourites' : 'Show all'} onClick={() => setFav(!fav)} /> </Grid>
-          <Grid item xs={0} md={5} />
+          <Grid item  md={5} />
 
         </Grid>
         <br />
