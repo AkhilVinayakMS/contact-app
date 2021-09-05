@@ -4,9 +4,9 @@ function SearchBoxComponent(props) {
 
     return (
         <div>
-            <input type='text' placeholder='Search' id='search-text-input' onInput={props.onInputValue} />
+            <input type='text' placeholder='Search' id='search-text-input' data-test-id='search-test' onInput={props.onInputValue} />
             <div id='button-holder'>
-                <img alt=''src={searchIcon} />
+                <img alt='search-icon'src={searchIcon} />
             </div>
         </div>
     )

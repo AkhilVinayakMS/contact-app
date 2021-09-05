@@ -20,21 +20,31 @@ function App() {
     setData(helper.formatData(contactList))
   }, [])
 
+  /** Various onChange functions to handle user click events
+   *  Since we arent ussing redux, all state changes are handled like this.
+   */
   function handleSearchText(event) {
-    // console.log(event.target.value)
     setSearchText(event.target.value)
   }
-  function handleMouseClick(data,isShow) {
+  function handleMouseClick(data, isShow) {
     setShowPopup(isShow)
     setSelectedContact(data)
   }
-  function handleFavAdding(item){
-    const indexf=(i)=>i.id===item.id;
-    const index = data.findIndex(indexf)
+  function handleFavAdding(item) {
+    const indexfindFn = (i) => i.id === item.id;
+    const index = data.findIndex(indexfindFn)
     item.isFav = !item.isFav;
-    data[index]=item;
+    data[index] = item;
     setData(data)
   }
+
+  /**
+   * This function will return the contact box component
+   * according to the selected criteria ()
+   * @param {*} srTxt - boolean
+   * @param {*} isFilter - boolean
+   * @returns -components
+   */
   function renderContacts(srTxt, isFilter) {
     let list = [];
     if (srTxt) {
@@ -42,7 +52,7 @@ function App() {
     }
 
     if (isFilter) {
-      list = data.filter(d=>d.isFav)
+      list = data.filter(d => d.isFav)
     }
     return (
       <Fragment>
@@ -53,7 +63,7 @@ function App() {
               <Grid item xs={12} md={5}>
                 <ContactBoxComponent item={item} onClickComp={handleMouseClick} />
               </Grid>
-              <Grid item  md={3} />
+              <Grid item md={3} />
             </Fragment>
           )
         })}
@@ -65,31 +75,27 @@ function App() {
   return (
     <Fragment>
       <div className={clName}>
-
         <Grid container>
           <Grid item xs={1} md={5} />
           <Grid item xs={12} md={5}>
             <h3>Contacts</h3>
           </Grid>
-          <Grid item  md={3} />
+          <Grid item md={3} />
         </Grid>
 
         <Grid container>
-          <Grid item  md={4} />
+          <Grid item md={4} />
           <Grid item xs={12} md={4}>
             <SearchBoxComponent onInputValue={handleSearchText} />
-
           </Grid>
-
-          <Grid item  md={4} />
+          <Grid item md={4} />
         </Grid>
         <br />
 
         <Grid container>
           <Grid item md={5} />
           <Grid item xs={12} md={3} id='filter-button'> <input type='button' value={!fav ? 'Filter Favourites' : 'Show all'} onClick={() => setFav(!fav)} /> </Grid>
-          <Grid item  md={5} />
-
+          <Grid item md={5} />
         </Grid>
         <br />
 
@@ -97,7 +103,7 @@ function App() {
           {!fav ? renderContacts(true, false) : renderContacts(false, true)}
         </Grid>
       </div>
-      {showPopup ? <DetailedContactComponent data={selectedContact} handleClose={handleMouseClick} handleFav ={handleFavAdding}/> : ''}
+      {showPopup ? <DetailedContactComponent data={selectedContact} handleClose={handleMouseClick} handleFav={handleFavAdding} /> : ''}
     </Fragment>
   );
 }
