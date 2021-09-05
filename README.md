@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `docker-compose up -d`
 
-Run the application in a dockerised environment and it will spin up the instance in [http://localhost:3001](http://localhost:3001)
+I'd dockerised the application and you can run it using docker-compose tool.It will spin up the instance in [http://localhost:3001](http://localhost:3001)
 
 ## Testing the application
 
