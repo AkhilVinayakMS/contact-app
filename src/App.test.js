@@ -38,7 +38,7 @@ test('on initial page load, the text-`Show all` shouldnt be visible', () => {
 });
 
 
-test('on initial page load, the text-`Filter Favourites ` shouldnt be visible', () => {
+test('on initial page load, the text-`Filter Favourites ` should be visible', () => {
   render(<App />);
   expect(screen.queryByText(/Filter Favourites/).toBeInTheDocument);
 });
